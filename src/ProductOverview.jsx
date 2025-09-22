@@ -6,6 +6,15 @@ function ProductOverview({ products, handleCart, cart, handleRemove }) {
   const { id } = useParams();
   const product = products.find((item) => item.id == id);
 
+
+     if (!product) {
+    return (
+      <div className="flex items-center justify-center h-screen text-white">
+        <p>Loading product details...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="poppins-bold fixed inset-0 z-50 flex items-center justify-center bg-black/80 overflow-auto p-4">
       {/* Card Container */}
